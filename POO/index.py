@@ -1,6 +1,6 @@
 # Ativiade Diagnóstica
 titulo = "DESAFIO DE PROGRAMAÇÃO - TECH FOOD"
-print(f'\n\n{"="*60}\n{titulo.center(60)}\n{"="*60}\n\n')
+print(f'{"="*60}\n{titulo.center(60)}\n{"="*60}\n\n')
 
 # OBJETIVO: Desenvolver uma operação de vendas de uma barraca.
 
@@ -20,4 +20,11 @@ def exibirCardapio():
 
     print(f'{"-"*60}')
         
-exibirCardapio()
+
+while True:
+    exibirCardapio()
+    
+    print(f'\n [1] - Registrar um novo pedido \n [2] - Consultar situação atual das vendas \n [3] - Encerrar o atendimento')
+    respostaAtendente = int(input(f'\n Escolha uma das opções acima: '))
+    
+    
