@@ -19,3 +19,6 @@ O que preciso saber enquanto estou montando um pedido?
 ## Histórico
 O que preciso guardar depois que uma venda é confirmada?
 - O pedido (nome, produtos, qtdes, valor, desconto)
+
+## O que podemos separar por funções?
+- Mostrar o cardápio
