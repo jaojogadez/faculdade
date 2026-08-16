@@ -20,11 +20,28 @@ def exibirCardapio():
 
     print(f'{"-"*60}')
         
+exibirCardapio()
+    
 
 while True:
-    exibirCardapio()
-    
     print(f'\n [1] - Registrar um novo pedido \n [2] - Consultar situação atual das vendas \n [3] - Encerrar o atendimento')
-    respostaAtendente = int(input(f'\n Escolha uma das opções acima: '))
     
+    try:
+        respostaAtendente = int(input(f'\nEscolha uma das opções acima: '))
+        
+        match respostaAtendente: 
+            case 1: 
+                print("Função: Registrando novo pedido...")
+            case 2: 
+                print("Função: Consultando vendas...")
+            case 3:
+                print("Atendimento finalizado. Muito obrigado e até a próxima!")
+                break
+            case _:
+                print("Por gentileza, digite uma opção válida.")
+                
+    except ValueError:
+        print("Por gentileza, digite uma das opções entre [1] a [3].")
     
+   
+            
