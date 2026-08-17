@@ -12,16 +12,29 @@ cardapio = [
     {"codigo": 5,"nome": "Combo TechFood", "preco": 30, "estoque": 15}
 ]
 
+vendas = [
+    {"produto": " ", "qtde": 0, "valorTotal": 0}
+]
+
 def exibirCardapio():
-    print(f'{"CARDÁPIO E ESTOQUE":^60}\n{"-"*60}\n {"Código":<10} {"Produto":<20} {"Preço":<15} {"Estoque":<10}\n{"-"*60}')
-         
+    print(f'\n{"CARDÁPIO E ESTOQUE":^60}\n{"-"*60}\n {"Código":<10} {"Produto":<20} {"Preço":<15} {"Estoque":<10}\n{"-"*60}')
     for produto in cardapio:         
         print(f'{produto['codigo']:<10} {produto['nome']:<20} {f"R${produto['preco']},00":<15} {produto['estoque']:<10}')     
-
-    print(f'{"-"*60}')
-        
+    print(f'{"-"*60}')  
+    
 exibirCardapio()
     
+def registrarPedido():
+    nomeCliente = input("Digite o nome do cliente: ")
+    exibirCardapio()
+    
+    while True:
+        try:
+            produtoCliente = int(input("Digite o código do produto que o cliente deseja ou 0 para encerrar o pedido: "))
+            quantidadeProduto = int(input("Digite a quantidade que o cliente deseja desse produto: "))    
+        except ValueError:
+            print("Por gentileza, digite um código válido de um produto.")
+            
 
 while True:
     print(f'\n [1] - Registrar um novo pedido \n [2] - Consultar situação atual das vendas \n [3] - Encerrar o atendimento')
@@ -31,7 +44,7 @@ while True:
         
         match respostaAtendente: 
             case 1: 
-                print("Função: Registrando novo pedido...")
+                registrarPedido()
             case 2: 
                 print("Função: Consultando vendas...")
             case 3:
@@ -43,5 +56,3 @@ while True:
     except ValueError:
         print("Por gentileza, digite uma das opções entre [1] a [3].")
     
-   
-            
