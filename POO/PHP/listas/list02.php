@@ -239,10 +239,10 @@
 
     echo PHP_EOL . "E o preço total ficou no valor de: R$" . calcularTotalPedido($pedido);
 
-    $temCartão = readline(PHP_EOL . "O cliente possui o cartão fidelidade? [s/n]");
+    $temCartão = readline("O cliente possui o cartão fidelidade? [s/n]");
     
     function aplicarDesconto($temCartão, $vendas) {
-        if($temCartão){
+        if($temCartão == 's'){
             return $desconto = $vendas[1] * 0.1;
         } else {
             return $desconto = 0;
@@ -252,7 +252,7 @@
     $desconto = aplicarDesconto($temCartão, $vendas);
 
     function showNotaFiscal($vendas, $pedido, $desconto) {
-        echo "NOTA FISCAl: ".PHP_EOL;
+        echo PHP_EOL."NOTA FISCAl: ";
         showPedidos($pedido);
         echo "Quantidade de produtos: " . count($vendas[0]) . PHP_EOL;   
         echo "Preço Total da Compra: R$ {$vendas[1]}".PHP_EOL;
