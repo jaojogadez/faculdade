@@ -116,5 +116,114 @@
         "marca" => "Ferrari",
         "modelo" => "top de linha",
         "ano" => 2100
-    ]
+    ];
+
+    foreach ($carro as $infoCar => $valor) {
+       echo "{$infoCar}: {$valor} \n";  
+    }
+
+    # EX 11:
+    // Crie um array multidimensional contendo 3 alunos e suas notas (3 notas cada). Exiba o nome de cada aluno e a média de suas notas.
+    echo "\n\nEXERCÍCIO 11\n\n";
+
+    
+    $alunos = [
+        [
+            "nome" => "João",
+            "notas" => [10, 10, 10]
+        ],
+        [
+            "nome" => "Kauê",
+            "notas" => [5, 5, 5]
+        ],
+        [
+            "nome" => "Pedro",
+            "notas" => [0, 0, 0]
+        ]
+    ];
+
+    foreach ($alunos as $aluno) {
+        echo calcMedia($aluno["nome"], $aluno["notas"][0], $aluno["notas"][1], $aluno["notas"][2]);
+    }
+
+    function calcMedia($nome, $nota1, $nota2, $nota3) {
+      $media = ($nota1 + $nota2 + $nota3);
+      return "O aluno {$nome} teve média de {$media}. \n";
+    }
+
+    # EX 12:
+    // Crie um array com nomes de 5 cidades. Peça ao usuário uma cidade e verifique se ela está na lista.
+    echo "\n\nEXERCÍCIO 12\n\n";
+    
+    $citys = [
+        "Marília", "Bauru", "Tupã", "Pompéia", "Presidente Prudente"
+    ];
+
+    $cityUser = readline("Digite uma cidade: ");
+    $validateCity = false;
+
+    foreach ($citys as $city) {
+        if ($cityUser == $city) {
+            $validateCity = true;
+        } 
+    }
+                
+    if ($validateCity) {
+        echo "A cidade {$cityUser} está na lista!";
+    } else {
+        echo "A cidade {$cityUser} não está na lista.";
+    }
+
+    # EX 13:
+    // Crie uma função calcularMedia($n1, $n2, $n3) que retorna a média aritmética de três números. Teste a função com valores diferentes
+    echo "\n\nEXERCÍCIO 13\n\n";
+    
+    function sum($a, $b, $c) {
+        return $result = ($a + $b +$c)/3;
+    }
+
+    $n1 = readline(("Digite o 1º número: "));
+    $n2 = readline(("Digite o 2º número: "));
+    $n3 = readline(("Digite o 3º número: "));
+
+    echo "A média dos números é " . sum($n1, $n2, $n3);
+
+    #EX 14
+    // Crie uma função verificarIdade($idade) que retorna "Maior de idade" ou "Menor de idade". Peça a idade do usuário e chame a função.
+    echo "\n\nEXERCÍCIO 14\n\n";
+
+    function verificarIdade($idade) {
+        if ($idade >= 18) {
+            return "Maior de Idade!";
+        } else {
+            return "Menor de Idade";
+        }
+    }
+
+    $idadeUser = readline("Digite sua idade: ");
+    echo verificarIdade($idadeUser);
+
+    #EX 15
+    // Projeto Final - Lista de Compras
+    echo "\n\nEXERCÍCIO 15\n\n";
+
+    $isValid = true;
+    $compras = [];
+
+    while ($isValid) {
+        $item = readline("Digite um item para adicionar a lista ou 'sair': ");
+
+        if ($item == "sair") {
+            $isValid = false;
+            echo "Programa Finalizado.".PHP_EOL;
+        }
+
+        $compras[] = $item;
+
+    }
+    
+    echo "Foram comprados os seguintes produtos: \n";
+    foreach ($compras as $compra) {
+        echo "{$compra} \n";
+    }
 ?>
