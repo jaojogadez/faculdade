@@ -108,6 +108,7 @@ def registrarPedido():
         except ValueError:
             print("Por gentileza, digite um código válido de um produto.")
 
+# Inacabado
 def consultarVendas():
     for indice, pedido in enumerate(vendas):
         print(f'Pedidos registrados no dia: {len(vendas)}\n')

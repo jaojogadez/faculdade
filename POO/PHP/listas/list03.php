@@ -242,4 +242,14 @@
     // Não tenho a mínima ideia de como fazer isso ;-;
     // tive que pesquisar: 
 
+    function podeAndar () {
+        if ($valor == 1) {
+            return false;
+        }
+        return true;
+    } 
+    
+    echo "Se o valor do 'tabuleiro' for 0: ". podeAndar(0);
+    echo "Se o valor do 'tabuleiro' for 1: ". podeAndar(1);
+
 ?>
