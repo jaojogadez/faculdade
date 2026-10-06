@@ -1,0 +1,17 @@
+{
+    "name": "aula/poo-php-c",
+    "description": "Projeto de POO",
+    "authors": [
+        {
+            "name": "João Lima"
+        }
+    ],
+    "require": {
+        "php": "^8.4"
+    },
+    "autoload": {
+        "psr-4": {
+            "App\\": "src/"
+        }
+    }
+}
