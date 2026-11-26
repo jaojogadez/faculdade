@@ -1,0 +1,13 @@
+{
+    "name": "poo-bcc/lista-final-ex3",
+    "description": "Projeto base do exercício 3 da lista final de POO.",
+    "type": "project",
+    "require": {
+        "php": "^8.4"
+    },
+    "autoload": {
+        "psr-4": {
+            "App\\": "src/"
+        }
+    }
+}
